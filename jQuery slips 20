@@ -1,0 +1,769 @@
+2. Write a jQuery code to scroll web page from top to bottom and vice versa.
+<!DOCTYPE html>
+<html>
+<head>
+<title> Scroll to the top of the page using jQuery.
+</title>
+<style> .
+.scroll { height: 1000px;
+background-color: lightgreen; }
+</style>
+</head>
+<body>
+<h1 style="color: green">
+Practical Assignment 2:
+</h1>
+<b>Scroll to the top of the page using jQuery</b>
+<p>Click on the button below to
+<p>Click on the button below to
+scroll to the top of the page.</p>
+<p class="scroll">jQuery is Javascript library.</p>
+<button onclick="scrollToTop()">Click to scroll to top</button>
+<script>
+function scrollToTop() {
+window.scrollTo(0, 0); }
+</script>
+</body>
+</html>
+
+
+
+
+3. Write a jQuery code to disable right click menu in html page.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Check jQuery</title>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</body>
+<script>
+$(document).ready(function() {
+// Disable right-click context menu
+$(document).on('contextmenu', function() {
+return false;
+});
+});
+</script>
+</body>
+</html>
+
+
+
+
+4.Write a jQuery code to disable the submit button until the visitor has clicked a check box.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Disable Submit Button</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+/* Optional: Add some styles for better presentation */
+label {
+display: block;
+margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+<form id="myForm">
+<label>
+<input type="checkbox" id="agreeCheckbox"> I agree to the terms and conditions
+</label>
+<input type="submit" value="Submit" id="submitButton" disabled>
+</form>
+<script>
+$(document).ready(function () {
+// Listen for checkbox change event
+$('#agreeCheckbox').change(function () {
+// Enable or disable the submit button based on checkbox status
+$('#submitButton').prop('disabled', !$(this).prop('checked'));
+});
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+5.Write a jQuery code to fix broken images automatically.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fix Broken Images</title>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+<img src="valid-image.jpg" alt="Valid Image" class="broken-image-handler">
+<img src="non-existent-image.jpg" alt="Broken Image" class="broken-image-handler">
+<script>
+$(document).ready(function () {
+// Handle broken images
+$('.broken-image-handler').on('error', function () {
+// Replace the broken image with a default image or placeholder
+$(this).attr('src', 'placeholder-image.jpg'); // Change to the desired image source
+});
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+6.Write a jQuery code to blink text continuously.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blinking Text</title>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<style>
+/* Optional: Add some styles for better presentation */
+.blinking-text {
+font-size: 18px;
+color: red;
+font-weight: bold;
+}
+</style>
+</head>
+<body>
+<div class="blinking-text">Blinking Text</div>
+<script>
+$(document).ready(function () {
+// Function to toggle visibility
+function toggleBlink() {
+$('.blinking-text').fadeToggle(500); // 500 milliseconds (adjust as needed)
+}
+// Set interval to toggle visibility every 500 milliseconds
+setInterval(toggleBlink, 500);
+});
+</script>
+</body>
+</html>
+
+
+
+
+7. Write a jQuery code to create a zebra stripes table effect.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zebra Stripes Table</title>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<style>
+/* Optional: Add some styles for better presentation */
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+}
+th, td {
+border: 1px solid #ddd;
+padding: 8px;
+text-align: left;
+}
+/* Zebra stripe effect */
+tr:nth-child(even) {
+background-color: #f2f2f2;
+}
+</style>
+</head>
+<body>
+<table>
+<thead>
+<tr>
+<th>Header 1</th>
+<th>Header 2</th>
+<th>Header 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Row 1, Cell 1</td>
+<td>Row 1, Cell 2</td>
+<td>Row 1, Cell 3</td>
+</tr>
+<tr>
+<td>Row 2, Cell 1</td>
+<td>Row 2, Cell 2</td>
+<td>Row 2, Cell 3</td>
+</tr>
+<tr>
+<td>Row 3, Cell 1</td>
+<td>Row 3, Cell 2</td>
+<td>Row 3, Cell 3</td>
+</tr>
+<!-- Add more rows as needed -->
+</tbody>
+</table>
+</body>
+</html>
+
+
+
+8. Write a jQuery code to print a page.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta
+charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Print Page</title>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+<h1>Your Page Content Goes Here</h1>
+<button id="printButton">Print Page</button>
+<script>
+$(document).ready(function () {
+// Add click event handler to the print button
+$('#printButton').on('click', function () {
+// Call the window.print() method to trigger the print dialog
+window.print();
+});
+});
+</script>
+</body>
+</html>
+
+
+
+
+9. Write a jQuery code to allow the user to enter only 15 characters into the textbox.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Character Limit</title>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+<label for="characterInput">Enter up to 15 characters:</label>
+<input type="text" id="characterInput">
+<script>
+$(document).ready(function () {
+// Add keypress event handler to the input
+$('#characterInput').on('keypress', function (e) {
+// Get the current value of the input
+var inputValue = $(this).val();
+// Check if the length exceeds 15 characters
+if (inputValue.length >= 15) {
+// Prevent further input if the limit is reached
+e.preventDefault();
+}
+});
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+10.Write a jQuery code to make first word of each statement to bold.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Make First Word Bold</title>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+<div id="textContainer">
+<p>This is the first statement. Another statement follows. Final statement here.</p>
+</div>
+<script>
+$(document).ready(function () {
+// Select the text container and process each paragraph
+$('#textContainer p').each(function () {
+var paragraphText = $(this).text();
+// Split the text into sentences
+var sentences = paragraphText.split('.');
+// Iterate through each sentence and make the first word bold
+for (var i = 0; i < sentences.length; i++) {
+var words = sentences[i].trim().split(' ');
+// Check if the sentence has at least one word
+if (words.length > 0) {
+// Wrap the first word with <strong> tag
+words[0] = '<strong>' + words[0] + '</strong>';
+}
+// Join the words back into a sentence
+sentences[i] = words.join(' ');
+}
+// Join the sentences back into a paragraph
+var updatedParagraph = sentences.join('.');
+// Update the HTML of the paragraph
+$(this).html(updatedParagraph);
+});
+});
+</script>
+</body>
+</html>
+
+
+
+11.Write a jQuery code to create a division (div tag) using jQuery with style tag.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Div with Style using jQuery</title>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+<script>
+$(document).ready(function () {
+// Create a new div element
+var newDiv = $('<div></div>');
+// Add some content to the div (optional)
+newDiv.text('This is a dynamically created div.');
+// Add a style attribute to the div
+newDiv.css({
+'background-color': '#e0e0e0',
+'padding': '10px',
+'border': '1px solid #ccc'
+// Add more styles as needed
+});
+// Append the new div to the body or any other container
+$('body').append(newDiv);
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+12.Write a jQuery code to select values from a JSON object.
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+<h1>JSON data output</h1>
+<div id="data-output"></div>
+<script>
+// JSON data object
+var dataObj = {
+"name": "Tanishka",
+"rollNo": "101",
+"address": {
+"state": "Delhi",
+"country": "India"
+}
+};
+$.each(dataObj, function (key, value) {
+$("#data-output").append("<p>" + key + ": " + JSON.stringify(value) + "</p>");
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+13.Write a jQuery code to add list elements within an unordered list element.
+!DOCTYPE html>
+<html lang="en">
+<head>
+<script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</script>
+<style>
+.btn {
+width: 66px;
+height: 21px;
+margin: 5px;
+padding: 0px;
+border-color: #b6b6bb;
+}
+#addList {
+border-color: rgb(183, 252, 252);
+}
+</style>
+<script>
+$(document).ready(function() {
+$('.btn').click(function() {
+var content = $('#addList').val();
+var fixingContent = '<li>' + content + '</li>';
+$('.List').append(fixingContent);
+})
+})
+</script>
+</head>
+<body>
+<h3 class="head"> Type List to Add</h3>
+<input type="text" id="addList">
+<input type="button" name="add"
+class="btn" value="Add">
+</button>
+<div class="addTask">
+<ul class="List">
+</ul>
+</div>
+</body>
+</html>
+
+
+
+
+
+14. Write a jQuery code to change button text.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>jQuery Change Button Text</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+$(document).ready(function(){
+// Change text of input button
+$("#myInput").prop("value", "Input New Text");
+// Change text of button element
+$("#myButton").html("Button New Text");
+});
+</script>
+</head>
+<body>
+<input type="button" id="myInput" value="Input Text">
+<button type="button" id="myButton">Button Text</button>
+</body>
+</html>
+
+
+
+
+14.Write a jQuery code to remove all the options of a select box and then add one
+option and select it.
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Basic inline styling -->
+<style>
+body {
+text-align: center;}
+h1 {color: green;
+font-size: 40px; }
+p {font-size: 25px;
+font-weight: bold;}
+button {display: block;
+cursor: pointer;
+margin: 5rem auto 0 auto;
+}
+select {cursor: pointer;}
+</style>
+</head>
+<body>
+<h1>GeeksforGeeks</h1>
+<p>
+jQuery - Remove all options of select box
+then add one option and select it
+</p>
+<select id="geek-select">
+<option value="geek1">GEEK 1</option>
+<option value="geek2">GEEK 2</option>
+<option value="geek3">GEEK 3</option>
+<option value="geek4">GEEK 4</option>
+</select>
+<button onclick="removeThenAdd()">
+Click me to remove all options and then add one option
+</button>
+<script type="text/javascript">
+function removeThenAdd() {
+$("#geek-select").empty().append('<option value = "gfg">GeeksForGeeks</option>');}
+</script>
+</body>
+</html>
+
+
+
+15.Write a jQuery code to underline all the words of a text.
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$("p").on({
+mouseenter: function(){
+$(this).css({"text-decoration": "underline"});
+}
+});
+});
+</script>
+</head>
+<body>
+<p>Move the mouse pointer on the text to make text bold, italic and underline.</p>
+</body>
+</html>
+
+
+
+
+
+
+
+16.Write a jQuery code to demonstrate how to get the value of a textbox.
+<!DOCTYPE html>
+<html>
+<head>
+<script src= jquery.min.js"> </script>
+<script type="text/javascript">
+$(document).ready(function () {
+$('.textbox').on('input', function () {
+$('span').text($('.textbox').val());
+});
+});
+</script>
+<style>
+.container {
+display: flex;
+justify-content: center;
+}
+h1 {
+color: green;
+}
+span { margin-top: 10px; }
+</style>
+</head>
+<body>
+<h1 class="container"> To Get value of textbox</h1>
+<div class="container">
+<input class="textbox" type="text" placeholder="Text" />
+</div>
+<span class="container"></span>
+</body>
+</html>
+
+
+
+
+17.Write a jQuery code to remove all CSS classes from an application.
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-git.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Remove all CSS classes using jQuery</title>
+<style>
+p.center {
+text-align: center;
+color: blue;
+}
+p.large {
+font-size: 200%;
+}
+</style>
+</head>
+<body>
+<script>
+function remove_classes()
+{
+$("#item").removeClass();
+}
+</script>
+<p id="item" class="center large">This paragraph refers two classes.</p>
+<input type="button" value="Click to remove all classes" onclick="remove_classes()" />
+</body>
+</html>
+
+
+18.Write a jQuery code to distinguish between left and right mouse click.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>
+How to distinguish left and right
+mouse click using jQuery?
+</title>
+</head>
+<body>
+<h1 style="color: green">
+To check the mousebutton pressed
+</h1>
+<b>
+How to distinguish left and
+right mouse click using jQuery?
+</b>
+<p>You are pressing the :
+<div class="output">
+</div>
+<button>
+Click Here to check the mousebutton pressed
+</button>
+<script src=" jquery-3.3.1.min.js">
+</script>
+<script type="text/javascript">
+$('button').mousedown(function(event) {
+switch (event.which) {
+case 1:
+document.querySelector('.output').innerHTML =
+'Left Mouse Button';
+break;
+case 2:
+document.querySelector('.output').innerHTML =
+'Middle Mouse Button';
+break;
+case 3:
+document.querySelector('.output').innerHTML =
+'Right Mouse Button';
+break;
+default:
+break;
+}
+});
+</script>
+</body>
+</html>
+
+
+
+
+19.Write a jQuery code to check if an object is a jQuery object or not.
+<!DOCTYPE html>
+<html>
+<head>
+<script src=" "></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Check if object is a jQuery object.</title>
+</head>
+<body>
+<script>
+var a = { what: "A regular JS object" },
+b = $('body');
+if ( a.jquery ) { // falsy, since it's undefined
+alert(' a is a jQuery object! ');
+}
+if ( b.jquery ) { // truthy, since it's a string
+alert(' b is a jQuery object! ');
+}
+</script>
+</body>
+</html>
+
+
+
+
+20.Write a jQuery code to detect whether the user has pressed “Enter key”or not.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Check if Enter Key is Pressed with jQuery</title>
+<script src=" jquery-3.5.1.min.js"></script>
+<script>
+$(document).on("keypress", function(e){
+if(e.which == 13){
+$("body").append("<p>You've pressed the enter key!</p>");
+}
+});
+</script>
+</head>
+<body>
+<p><strong>Note:</strong> Click on the viewport and press the Enter key on the keyboard. A message
+will be displayed.</p>
+</body>
+</html>
+
+
+
+
+21.Write a jQuery code to count number of rows and columns in a table.
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>
+Count Number of Rows and
+Columns ina Table Using jQuery.
+</title>
+<script src=”jquery.min.js">
+</script>
+</head>
+<body>
+<center>
+<h1 style="color:green;">
+Count Number of Rows in
+a Table Using jQuery
+</h1>
+<br><br>
+<table id="Table_id" border="1" width="140">
+<thead>
+<tr style="background:green;">
+<th>Roll.No</th>
+<th>Name</th>
+<th>Address</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>sayali</td>
+<td>pune</td>
+</tr>
+<tr>
+<td>2</td>
+<td>smita</td>
+<td>Mumbai</td>
+</tr>
+</tbody>
+</table>
+<br>
+<button type="button">
+Count Rows
+</button>
+<p id="result"></p>
+<!-- Script to Count number of rows in a table -->
+<script>
+$(document).ready(function () {
+$("button").click(function () {
+let rows = 0;
+let cols = 0;
+// Counting rows
+$("#Table_id tr").each(()=>{
+rows++;
+});
+// Counting columns
+$("#Table_id tr th").each(()=>{
+cols++;
+});
+// Showing result on the user screen
+$('#result').html(`Number of Rows: ${rows} <br/>
+Number of Columns: ${cols}`)
+});
+});
+</script>
+</center>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
